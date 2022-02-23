@@ -7,16 +7,38 @@ slug: /celo-codebase/protocol/identity
 
 How Celo maps wallet addresses to phone numbers to make financial tools more accessible to mobile phone users.
 
-___
+<!--
+TODO: 
+- [ ] Who is the audience here? (end-user, crypto curious, developer that wants to adopt this?)
+- [ ] How technical is the audience? (2nd paragraph goes into random contract, validator set, attestation contract, etc...)
+
+-->
+
 ## Introduction to Identity on Celo
 
 Celo’s unique purpose is to make financial tools accessible to anyone with a mobile phone. One barrier for the usage of many other platforms is their required usage of 30+ hexadecimal-character-long strings as addresses. It’s like bank account numbers, but worse. Hard to remember, easy to mess up. They are so hard to use that the predominant way of exchanging addresses is usually via copy-paste over an existing messaging channel or via QR-codes in person. Both approaches are practically interactive protocols and thus do not cover many use cases in which people would like to transact. Celo offers an optional lightweight identity layer that starts with a decentralized mapping of phone numbers to wallet addresses, allowing users to transact with one another via the most common identity scheme everyone is familiar with: their address book.
 
 ![](https://storage.googleapis.com/celo-website/docs/attestations-flow.jpg)
 
+<!--
+TODO: 
+- [ ] Is this the simplest diagram to explain ASv1 to a non-technical audience?
+-->
+
 ### Adding their phone number to the mapping
 
-To allow Bob to find an address mapped to her phone number, Alice can request attestations to their phone number \(technically the hash of their phone number\) from the `Attestations` contract by transferring the attestation request fee to it. The fee per attestation request is set on the contract with [Governance](celo-codebase/protocol/governance.md). After a brief waiting time of currently `4` blocks, the `Attestations` contract will use the `Random` contract to do a random selection over the current validator set in the `Validators` contract who will become responsible for these attestation requests.
+<!--
+- [ ] Slightly confusing pronouns below. Check whether this is intentional.
+- [ ] Consider linking "attestations" contract
+- [ ] Consider linking "random" contract
+- [ ] Consider linking "validator" contract
+-->
+
+To allow Bob to find an address mapped to her phone number, Alice can request attestations to their phone number \(technically the hash of their phone number\) from the `Attestations`  contract by transferring the attestation request fee to it. The fee per attestation request is set on the contract with [Governance](celo-codebase/protocol/governance.md). After a brief waiting time of currently `4` blocks, the `Attestations` contract will use the `Random` contract  to do a random selection over the current validator set in the `Validators` contract who will become responsible for these attestation requests.
+
+<!-- 
+
+-->
 
 As part of the expectation to validators, they run the attestation service whose endpoint they register in their [Metadata](/celo-codebase/protocol/identity/metadata.md). Alice can identify the validators responsible for her attestation from the smart contract, determine the validators' attestation service URLs from their [Metadata](/celo-codebase/protocol/identity/metadata.md) and request attestations from them. In turn, the attestation service produces a signed secret message that acts as an attestation by that validator that Alice owns the phone number. The validator sends that message via SMS. Read more under [attestation service](#attestation-service).
 
