@@ -6,8 +6,19 @@ description: How the Celo protocol's metadata and claims feature makes it possib
 
 How the Celo protocol's **metadata and claims** feature makes it possible to connect on-chain with off-chain identities.
 
+<!--NOTES:
+- [ ] Who is the audience here? (end-user, crypto curious, developer that wants to adopt this?)
+- [ ] How technical is the audience? (2nd paragraph goes into random contract, validator set, attestation contract, etc...)
+-->
+
 ___
 ## Use Cases
+
+<!--NOTES:
+- [ ] This relates to CIP3 (linked it here).
+- [ ] "Tools" is unclear here.
+- [ ] "Celo Wallet" is not correct anymore
+-->
 
 - Tools want to present public metadata supplied by a validator or validator group as part of a list of candidate groups, or a list of current elected validators.
 - Governance Explorer UIs may want to present public metadata about the creators of governance proposals
@@ -16,20 +27,35 @@ ___
 
 Furthermore, these tools may want to include user chosen information such as names or profile pictures that would be expensive to store on-chain. For this purpose, the Celo protocol supports **metadata** that allows accounts to make both verifiable as well as non-verifiable claims. The design is described in [CIP3](https://github.com/celo-org/CIPs/pull/4).
 
+<!--NOTES:
+ - [ ] Move this up describe this before the use cases
+-->
+
 On the `Accounts` smart contract, any account can register a URL under which their metadata file is available. The metadata file contains an unordered list of claims, signed by the account.
 
 ## Types of Claim
+
+<!--NOTES:
+- [ ] Link ContractKit
+- [ ] This developer facing (too much detail for crypto curious and end-user) 
+-->
 
 ContractKit currently supports the following types of claim:
 
 - **Name Claim** - An account can claim a human-readable name. This claim is not verifiable.
 
+<!--NOTES:
+- [ ] "ligthweight identity layer" doesn't point anywhere and is conflicting terminology 
+-->
 - **Attestation Service URL Claim** - For the [lightweight identity layer](../), validators can make a claim under which their Attestation Service is reachable to provide attestations. This claim is not verifiable.
 
 - **Keybase User Claim** - Accounts can make claims on [Keybase](https://keybase.io) usernames. This claim is verifiable by signing a message with the account and hosting it on the publicly accessible path of the Keybase file system.
 
 - **Domain Claim** - Accounts can make claims on domain names. This claim is verifiable by signing a message with the account and embedding it in a [TXT record](https://en.wikipedia.org/wiki/TXT_record).
 
+<!--NOTES:
+- [ ] Remove Twitter claims below (not currently supported). Implementation might change. Update relevant docs when it's available. 
+ -->
 In the future ContractKit may support other types of claim, including:
 
 - **Twitter User Claim** - Accounts can make claims on [Twitter](https://twitter.com/) usernames. This claim is verifiable by signing a message with the account and posting it as a tweet. Any client can verify the claim with a reference to the tweet in the claim.
