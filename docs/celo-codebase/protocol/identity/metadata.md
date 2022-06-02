@@ -16,7 +16,10 @@ ___
 
 Furthermore, these tools may want to include user chosen information such as names or profile pictures that would be expensive to store on-chain. For this purpose, the Celo protocol supports **metadata** that allows accounts to make both verifiable as well as non-verifiable claims. The design is described in [CIP3](https://github.com/celo-org/CIPs/pull/4).
 
-On the `Accounts` smart contract, any account can register a URL under which their metadata file is available. The metadata file contains an unordered list of claims, signed by the account.
+On the `Accounts` smart contract, any account can register a URL under which their metadata file is available. The metadata file contains an unordered list of claims, signed by the account. 
+
+
+
 
 ## Types of Claim
 
