@@ -6,8 +6,6 @@ id: token-addresses
 import YouTube from '@components/YouTube';
 import PageRef from '@components/PageRef';
 
-Token addresses for Celo assets on Mainnet, Alfajores Testnet, and Baklava Testnet.
-
 ---
 
 ## Mainnet

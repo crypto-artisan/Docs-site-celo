@@ -16,36 +16,37 @@ There are 6 Billion smartphones on Earth. Build for all of them.
 
 [Celo Developers](https://celo.org/developers) build financial dApps that create the conditions for prosperity for everyone. Celo's ultralight mobile client makes it easy to build for smartphones across the world. Send or Request stable assets easily with anyone in your address book, powered by decentralized phone number verification.
 
-## Local Environmennt
+:::tip
 
-- [Using Mac](/developer-resources/using-mac)
-- [Using Windows](/developer-guide/start/develop-on-windows)
+Not ready to become a Celo Developer? [Learn more about Celo](../../docs/welcome.md).
+
+:::
+
+## Set up your environment
+
+<PageRef url="/developer-resources/using-mac" pageName="Using Mac" />
+<PageRef url="/developer-guide/start/develop-on-windows" pageName="Using Windows" />
+
+:::info
+
+Want to create a dApp fast? [Deploy on Celo](/developer-resources/deploy-dapp)
+
+:::
+
+## Create a testnet wallet
+
+<PageRef url="/developer-resources/testnet-wallet" pageName="Set up a Testnet Development Wallet" />
 
 ## Deploy on Celo
 
-- [Using Remix](/developer-resources/deploy-remix)
-- [Using Truffle](/developer-resources/deploy-truffle)
-- [Using Hardhat](/developer-resources/deploy-hardhat)
-- [Using Replit](/developer-resources/deploy-replit)
+<PageRef url="/developer-resources/deploy-dapp" pageName="Deploy on Celo" />
 
-## Code Examples
+## Integrate with Celo
 
-- [Celo Composer](https://github.com/celo-org/celo-composer#celo-composer)
-- [Developer Blog](https://medium.com/celodevelopers)
-- [Code Tutorials](blog)
-- [Figment](https://learn.figment.io/protocols/celo)
-- [Dacade](https://dacade.org/communities/celo)
+<PageRef url="/developer-guide/integrations" pageName="Integrate with Celo" />
 
-## Migrate to Celo
+:::tip
 
-- [Ethereum Developers](/developer-guide/celo-for-eth-devs)
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
-## Integrations
-
-- [Integrations](/developer-guide/integrations)
-
-## Developer Tools
-
-- [EVM Compatible Tooling](/learn/evm-compatible-tooling)
-- [Block Explorer](https://explorer.celo.org/)
-- [Testnet Faucet](https://celo.org/developers/faucet)
+:::
